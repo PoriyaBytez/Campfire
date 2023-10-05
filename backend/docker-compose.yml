@@ -1,0 +1,42 @@
+version: '3'
+services:
+  api:
+    image: urvish91/campfire_app:1.0.5
+    container_name: campfire_prod_api
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - /usr/src/app/node_modules
+    environment:
+      - DOMAIN=http://52.205.222.199:3000
+      - MONGO_URI=mongodb+srv://taigez:Startupfast1099@cluster0.ijl0gkn.mongodb.net/campfire?retryWrites=true&w=majority
+      # AWS DATA
+      - AWS_ACCESS_KEY=AKIASOCI4KHPOXC77Q66
+      - AWS_SECRET_KEY=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
+      - AWS_REGION=us-east-1
+      - AWS_S3_BUCKET=campfireimages
+      # TOKEN SECRETS
+      - ACCESS_TOKEN_SECRET=campfirejwtsecret
+      - REFRESH_TOKEN_SECRET=refreshtokensecret
+      # MONGODB ROOT PASSWORDS
+      - MONGO_INITDB_ROOT_USERNAME=taigez
+      - MONGO_INITDB_ROOT_PASSWORD=Startupfast1099
+      # EMAIL SERVICE
+      - SMTP_HOST=email-smtp.us-east-1.amazonaws.com
+      - SMTP_PORT=465
+      - SMTP_SECURE=true
+      - SMTP_AUTH_USER=AKIASOCI4KHPOXC77Q66
+      - SMTP_AUTH_PASS=iE6bllMJ4GGL3lTHDRiyCzSyKtdV0HoIREFArmvy
+      # Run a command against the development stage of the image
+    command: yarn run start:prod
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+networks:
+  campfire_network:
+    driver: bridge
+volumes:
+  mongodata:
+    driver: local

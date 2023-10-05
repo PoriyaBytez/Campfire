@@ -1,0 +1,16 @@
+export default {
+  primaryColor: "#4ABC96",
+  backgroundColor: "#FFFFFF",
+  white: "#FFFFFF",
+  black: "black",
+  darkGrey: "#333333",
+  lightGrey: "#F2F2F2",
+  textPlaceHolder: "#828282",
+  inputBorderColor: "#E5E5E5",
+  gray4: "#BDBDBD",
+  blue: "#2F80ED",
+  green: "#69C779",
+  error: "#EB5757",
+  lightBlue: "#4171ED",
+  lightBg: "#FFFDF4",
+};

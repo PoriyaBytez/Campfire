@@ -1,0 +1,39 @@
+{
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["ES2018"],
+    "allowJs": true,
+    "jsx": "react-native",
+    "sourceMap": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "baseUrl": "src",
+    "moduleResolution": "node",
+    "types": ["node"],
+    "paths": {
+      "~components/*": ["components/*"],
+      "~assets/*": ["assets/*"],
+      "~navigators/*": ["navigators/*"],
+      "~redux/*": ["redux/*"],
+      "~screens/*": ["screens/*"],
+      "~services/*": ["services/*"],
+      "~translations/*": ["translations/*"],
+      "~utils/*": ["utils/*"],
+      "~theme/*": ["theme/*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "*.ts", "*.tsx", "declarations.d.ts", "react-native.config.js"],
+  "exclude": ["node_modules", "metro.config.js", "android", "ios", "vendor"]
+}

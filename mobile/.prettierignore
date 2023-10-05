@@ -1,0 +1,9 @@
+vendor
+dist/
+node_modules/
+Pods/
+
+android/.idea
+android/app/build/
+vendor/bundle/
+ios/build/
